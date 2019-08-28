@@ -5,6 +5,8 @@ namespace MetaShipRU\MetaShipPHPSDK;
 use GuzzleHttp\Client;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use MetaShipRU\MetaShipPHPSDK\Request\City\GetCitiesRequest;
+use MetaShipRU\MetaShipPHPSDK\Request\City\GetZipsRequest;
 use MetaShipRU\MetaShipPHPSDK\Request\Documents\GetAcceptanceRequest;
 use MetaShipRU\MetaShipPHPSDK\Request\Documents\GetLabelRequest;
 use MetaShipRU\MetaShipPHPSDK\Request\Offer\OfferRequest;
@@ -120,6 +122,35 @@ class MetaShipAPIClient
             ]);
     }
 
+    public function getCities(GetCitiesRequest $getCitiesRequest): ResponseInterface
+    {
+        $params = $this->serializer->toArray($getCitiesRequest);
+        return $this->client->request($getCitiesRequest->getMethod(),
+            $getCitiesRequest->getPath(),
+            [
+                'query' => $params,
+                'headers' => $this->getHeaders($getCitiesRequest->getMethod(),
+                    $getCitiesRequest->getPath(),
+                    '',
+                    http_build_query($params))
+            ]);
+    }
+
+    public function getZips(GetZipsRequest $getZipsRequest): ResponseInterface
+    {
+        $params = $this->serializer->toArray($getZipsRequest);
+
+        return $this->client->request($getZipsRequest->getMethod(),
+            $getZipsRequest->getPath(),
+            [
+                'query' => $params,
+                'headers' => $this->getHeaders($getZipsRequest->getMethod(),
+                    $getZipsRequest->getPath(),
+                    '',
+                    http_build_query($params))
+            ]);
+    }
+
     public function createParcel(CreateParcelRequest $createParcelRequest): ResponseInterface
     {
         $body = $this->serializer->serialize($createParcelRequest, 'json');
@@ -173,8 +204,8 @@ class MetaShipAPIClient
     }
 
     private function getHeaders(string $requestMethod, string $requestSlug, string $requestBody = '',
-        string $queryParams = '')
-    {
+        string $queryParams = ''
+    ) {
         $signature = $this->generateSignatureFromRequest($requestMethod,
             $requestSlug,
             $requestBody,
