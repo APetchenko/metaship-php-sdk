@@ -200,7 +200,8 @@ class MetaShipAPIClient
             $path,
             [
                 'headers' => $this->getHeaders($getStatusesRequest->getMethod(), $path),
-            ]);
+            ]
+        );
     }
 
     private function getHeaders(string $requestMethod, string $requestSlug, string $requestBody = '',

@@ -23,7 +23,7 @@ class Recipient
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\SerializedName("middleName")
+     * @Serializer\SerializedName("lastName")
      * @var string
      */
     public $lastName;
