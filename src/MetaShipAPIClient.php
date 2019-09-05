@@ -190,7 +190,8 @@ class MetaShipAPIClient
         return $this->client->delete($path,
             [
                 'headers' => $this->getHeaders($deleteOrderRequest->getMethod(), $path)
-            ]);
+            ]
+        );
     }
 
     public function getStatuses(GetStatusesRequest $getStatusesRequest): ResponseInterface
