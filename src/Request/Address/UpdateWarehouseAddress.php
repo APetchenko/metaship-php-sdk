@@ -1,18 +1,15 @@
 <?php
 
-namespace MetaShipRU\MetaShipPHPSDK\DTO\Address;
+namespace MetaShipRU\MetaShipPHPSDK\Request\Address;
 
 use JMS\Serializer\Annotation as Serializer;
-use MetaShipRU\MetaShipPHPSDK\DTO\City\City;
 
-class Address
+/**
+ * Class UpdateWarehouseAddress
+ * @package MetaShipRU\MetaShipPHPSDK\Request\Address
+ */
+class UpdateWarehouseAddress
 {
-    /**
-     * @Serializer\Type("string")
-     * @var string
-     */
-    public $city;
-
     /**
      * @Serializer\Type("string")
      * @var string
@@ -20,16 +17,16 @@ class Address
     public $street;
 
     /**
-     * @Serializer\Type("string")
-     * @var string
-     */
-    public $house;
-
-    /**
      * @Serializer\Type("integer")
      * @var int
      */
     public $zip;
+
+    /**
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $house;
 
     /**
      * @Serializer\Type("string")
@@ -54,4 +51,5 @@ class Address
      * @var string
      */
     public $comment;
+
 }

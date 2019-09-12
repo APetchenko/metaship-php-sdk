@@ -14,6 +14,7 @@ class City
 
     /**
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("fullName")
      * @var string
      */
     public $fullName;
@@ -37,18 +38,21 @@ class City
     public $prefix;
 
     /**
+     * @Serializer\SerializedName("kladrId")
      * @Serializer\Type("string")
      * @var string
      */
     public $kladrId;
 
     /**
+     * @Serializer\SerializedName("fiasId")
      * @Serializer\Type("string")
      * @var string
      */
     public $fiasId;
 
     /**
+     * @Serializer\SerializedName("combinedName")
      * @Serializer\Type("string")
      * @var string
      */

@@ -7,12 +7,18 @@ use MetaShipRU\MetaShipPHPSDK\Request\RequestCore;
 
 /**
  * Class GetStatusesRequest
- * @package MetaShipRU\MetaShipPHPSDK\Request\Status
+ * @package MetaShipRU\MetaShipPHPSDK\Request\Statuses
  */
-class GetStatusesRequest implements IRequest
+class GetOrderStatusesRequest implements IRequest
 {
     use RequestCore;
 
     const METHOD = 'GET';
-    const PATH = '/v1/statuses';
+    const PATH = '/v1/orders';
+
+    /**
+     * @var int
+     */
+    public $id;
+
 }
