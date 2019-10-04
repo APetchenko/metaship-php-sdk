@@ -101,6 +101,13 @@ class CreateOrderRequest implements IRequest
 
     /**
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("tariffId")
+     * @var float
+     */
+    public $tariffId;
+
+    /**
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("desiredDeliveryDate")
      * @var string
      */
@@ -119,13 +126,6 @@ class CreateOrderRequest implements IRequest
      * @var string
      */
     public $timeTo;
-
-    /**
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("tariffId")
-     * @var float
-     */
-    public $tariffId;
 
     /**
      * @Serializer\Type("MetaShipRU\MetaShipPHPSDK\Request\Recipient\CreateRecipientRequest")
