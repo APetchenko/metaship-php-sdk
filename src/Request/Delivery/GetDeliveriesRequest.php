@@ -15,4 +15,24 @@ class GetDeliveriesRequest implements IRequest
 
     const PATH = '/v1/deliveries';
     const METHOD = 'GET';
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("deliveryName")
+     * @var string
+     */
+    public $deliveryName;
+
+    /**
+     * @Serializer\Type("integer")
+     * @var int
+     */
+    public $zip;
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("pickupPointId")
+     * @var string
+     */
+    public $pickupPointId;
 }

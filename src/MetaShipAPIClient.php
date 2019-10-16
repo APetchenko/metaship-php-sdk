@@ -299,15 +299,19 @@ class MetaShipAPIClient
 
     public function getDeliveries(GetDeliveriesRequest $getDeliveriesRequest): ResponseInterface
     {
+        $path = $getDeliveriesRequest->getPath();
+        if ($getDeliveriesRequest->deliveryName) {
+            $path .= '/' . $getDeliveriesRequest->deliveryName;
+        }
         $params = $this->serializer->toArray($getDeliveriesRequest);
         return $this->client->request(
             $getDeliveriesRequest->getMethod(),
-            $getDeliveriesRequest->getPath(),
+            $path,
             [
                 'query' => $params,
                 'headers' => $this->getHeaders(
                     $getDeliveriesRequest->getMethod(),
-                    $getDeliveriesRequest->getPath(),
+                    $path,
                     '',
                     http_build_query($params)
                 ),
