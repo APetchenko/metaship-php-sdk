@@ -51,4 +51,18 @@ class Warehouse
      * @var string
      */
     public $created;
+
+    /**
+     * @Serializer\SerializedName("serviceNumber")
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $serviceNumber;
+
+    /**
+     * @Serializer\SerializedName("shopServiceNumber")
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $shopServiceNumber;
 }
