@@ -34,4 +34,17 @@ class Status
      * @var string
      */
     public $comment;
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("deliveryServiceName")
+     * @var string
+     */
+    public $deliveryServiceName;
+
+    /**
+     * @Serializer\Type("array<MetaShipRU\MetaShipPHPSDK\DTO\Status\StatusItem>")
+     * @var StatusItem[]
+     */
+    public $items;
 }

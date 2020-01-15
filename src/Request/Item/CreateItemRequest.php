@@ -47,4 +47,11 @@ class CreateItemRequest
      * @var string
      */
     public $vatCode;
+
+    /**
+     * @Serializer\Type("array<string>")
+     *
+     * @var array
+     */
+    public $barcodes;
 }

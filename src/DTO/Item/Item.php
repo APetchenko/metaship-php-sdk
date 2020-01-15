@@ -23,4 +23,28 @@ class Item
      * @var string
      */
     public $vatCode;
+
+    /**
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @Serializer\Type("float")
+     * @var float
+     */
+    public $cost;
+
+    /**
+     * @Serializer\Type("float")
+     * @var float
+     */
+    public $weight;
+
+    /**
+     * @Serializer\Type("integer")
+     * @var int
+     */
+    public $quantity;
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace MetaShipRU\MetaShipPHPSDK\Request\Delivery;
+
 use JMS\Serializer\Annotation as Serializer;
 use MetaShipRU\MetaShipPHPSDK\Request\IRequest;
 use MetaShipRU\MetaShipPHPSDK\Request\RequestCore;
@@ -30,7 +31,7 @@ class GetDeliveriesRequest implements IRequest
     public $zip;
 
     /**
-     * @Serializer\Type("string")
+     * @Serializer\Type("integer")
      * @Serializer\SerializedName("pickupPointId")
      * @var string
      */

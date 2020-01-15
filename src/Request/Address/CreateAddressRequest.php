@@ -65,4 +65,10 @@ class CreateAddressRequest
      */
     public $comment;
 
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("fullAddress")
+     * @var string
+     */
+    public $fullAddress;
 }

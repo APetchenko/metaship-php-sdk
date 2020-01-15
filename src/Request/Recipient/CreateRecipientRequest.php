@@ -45,6 +45,13 @@ class CreateRecipientRequest
     public $phone;
 
     /**
+     * @Serializer\SerializedName("additionalPhones")
+     * @Serializer\Type("array<string>")
+     * @var array
+     */
+    public $additionalPhones;
+
+    /**
      * @Serializer\Type("string")
      * @var string
      */

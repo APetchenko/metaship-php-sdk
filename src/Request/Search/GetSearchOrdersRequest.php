@@ -48,4 +48,17 @@ class GetSearchOrdersRequest implements IRequest
      * @var int
      */
     public $batchSize = 50;
+
+    /**
+     * @Serializer\SerializedName("shopServiceCode")
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $shopServiceCode;
+
+    /**
+     * @Serializer\SerializedName("arrivedDate")
+     * @var string
+     */
+    public $arrivedDate;
 }

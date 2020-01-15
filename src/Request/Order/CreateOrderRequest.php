@@ -3,6 +3,7 @@
 namespace MetaShipRU\MetaShipPHPSDK\Request\Order;
 
 use JMS\Serializer\Annotation as Serializer;
+use MetaShipRU\MetaShipPHPSDK\DTO\Place\Place;
 use MetaShipRU\MetaShipPHPSDK\Request\IRequest;
 use MetaShipRU\MetaShipPHPSDK\Request\Item\CreateItemRequest;
 use MetaShipRU\MetaShipPHPSDK\Request\Recipient\CreateRecipientRequest;
@@ -24,6 +25,27 @@ class CreateOrderRequest implements IRequest
      * @var int
      */
     public $length;
+
+    /**
+     * @Serializer\SerializedName("shopId")
+     * @Serializer\Type("integer")
+     * @var int
+     */
+    public $shopId;
+
+    /**
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("warehouseId")
+     * @var int
+     */
+    public $warehouseId;
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("fulfillmentServiceNumber")
+     * @var string
+     */
+    public $fulfillmentServiceNumber;
 
     /**
      * @Serializer\Type("integer")
@@ -52,10 +74,23 @@ class CreateOrderRequest implements IRequest
 
     /**
      * @Serializer\Type("string")
+     * @var string
+     */
+    public $status;
+
+    /**
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("shopServiceCode")
      * @var string
      */
     public $shopServiceCode;
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("warehouseServiceCode")
+     * @var string
+     */
+    public $warehouseServiceCode;
 
     /**
      * @Serializer\Type("float")
@@ -72,6 +107,13 @@ class CreateOrderRequest implements IRequest
     public $paymentSum;
 
     /**
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("paymentMethod")
+     * @var int
+     */
+    public $paymentMethod;
+
+    /**
      * @Serializer\Type("string")
      * @Serializer\SerializedName("shopNumber")
      * @var string
@@ -84,27 +126,6 @@ class CreateOrderRequest implements IRequest
      * @var string
      */
     public $deliveryType;
-
-    /**
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("deliveryCost")
-     * @var float
-     */
-    public $deliveryCost;
-
-    /**
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("prepaidValue")
-     * @var float
-     */
-    public $prepaidValue;
-
-    /**
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("tariffId")
-     * @var float
-     */
-    public $tariffId;
 
     /**
      * @Serializer\Type("string")
@@ -128,6 +149,41 @@ class CreateOrderRequest implements IRequest
     public $timeTo;
 
     /**
+     * @Serializer\Type("float")
+     * @Serializer\SerializedName("deliveryCost")
+     * @var float
+     */
+    public $deliveryCost;
+
+    /**
+     * @Serializer\Type("float")
+     * @Serializer\SerializedName("prepaidValue")
+     * @var float
+     */
+    public $prepaidValue;
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("tariffId")
+     * @var string
+     */
+    public $tariffId;
+
+    /**
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("shipmentDate")
+     * @var string
+     */
+    public $shipmentDate;
+
+    /**
+     * @Serializer\Type("array<string>")
+     *
+     * @var array
+     */
+    public $services;
+
+    /**
      * @Serializer\Type("MetaShipRU\MetaShipPHPSDK\Request\Recipient\CreateRecipientRequest")
      * @var CreateRecipientRequest
      */
@@ -138,4 +194,17 @@ class CreateOrderRequest implements IRequest
      * @var CreateItemRequest[]
      */
     public $items;
+
+    /**
+     * @Serializer\Type("array<MetaShipRU\MetaShipPHPSDK\DTO\Place\Place>")
+     * @var Place[]
+     */
+    public $places;
+
+    /**
+     * @Serializer\SerializedName("created")
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $created;
 }

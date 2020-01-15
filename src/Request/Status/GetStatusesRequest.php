@@ -15,4 +15,9 @@ class GetStatusesRequest implements IRequest
 
     const METHOD = 'GET';
     const PATH = '/v1/statuses';
+
+    /**
+     * @var int
+     */
+    public $id;
 }

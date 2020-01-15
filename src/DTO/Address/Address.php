@@ -3,7 +3,6 @@
 namespace MetaShipRU\MetaShipPHPSDK\DTO\Address;
 
 use JMS\Serializer\Annotation as Serializer;
-use MetaShipRU\MetaShipPHPSDK\DTO\City\City;
 
 class Address
 {
@@ -24,6 +23,12 @@ class Address
      * @var string
      */
     public $house;
+
+    /**
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $region;
 
     /**
      * @Serializer\Type("integer")
@@ -50,8 +55,9 @@ class Address
     public $apartment;
 
     /**
+     * @Serializer\SerializedName("fullAddress")
      * @Serializer\Type("string")
      * @var string
      */
-    public $comment;
+    public $fullAddress;
 }

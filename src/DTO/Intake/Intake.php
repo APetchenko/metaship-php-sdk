@@ -72,6 +72,12 @@ class Intake
     public $warehouseTo;
 
     /**
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $name;
+
+    /**
      * @Serializer\Type("MetaShipRU\MetaShipPHPSDK\DTO\CourierSchedule\CourierSchedule")
      * @var CourierSchedule
      */
@@ -82,4 +88,11 @@ class Intake
      * @var string
      */
     public $created;
+
+    /**
+     * @Serializer\SerializedName("shopServiceNumber")
+     * @Serializer\Type("string")
+     * @var string
+     */
+    public $shopServiceNumber;
 }
