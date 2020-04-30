@@ -18,6 +18,12 @@ class CreateAddressRequest
 
     /**
      * @Serializer\Type("string")
+     * @var string
+     */
+    public $region;
+
+    /**
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("kladrId")
      * @var string
      */
